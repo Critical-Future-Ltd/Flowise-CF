@@ -40,7 +40,7 @@ function a11yProps(index) {
 
 const embedPopupHtmlCode = (chatflowid) => {
     return `<script type="module">
-    import Chatbot from "https://cdn.jsdelivr.net/npm/flowise-embed/dist/web.js"
+    import Chatbot from "https://critical-future-llm-in-a-box.github.io/llminaboxchatbots/chatbots/base/web-new.js"
     Chatbot.init({
         chatflowid: "${chatflowid}",
         apiHost: "${baseURL}",
@@ -64,7 +64,7 @@ const App = () => {
 const embedFullpageHtmlCode = (chatflowid) => {
     return `<flowise-fullchatbot></flowise-fullchatbot>
 <script type="module">
-    import Chatbot from "https://cdn.jsdelivr.net/npm/flowise-embed/dist/web.js"
+    import Chatbot from "https://critical-future-llm-in-a-box.github.io/llminaboxchatbots/chatbots/base/web-new.js"
     Chatbot.initFull({
         chatflowid: "${chatflowid}",
         apiHost: "${baseURL}",
@@ -171,7 +171,7 @@ export const defaultThemeConfig = {
             textColor: '#303235',
             text: 'Powered by',
             company: 'Flowise',
-            companyLink: 'https://flowiseai.com'
+            companyLink: 'https://criticalfutureglobal.com'
         }
     }
 }
@@ -246,7 +246,7 @@ const getFullPageThemeConfig = () => {
 const embedFullpageHtmlCodeCustomization = (chatflowid) => {
     return `<flowise-fullchatbot></flowise-fullchatbot>
 <script type="module">
-    import Chatbot from "https://cdn.jsdelivr.net/npm/flowise-embed/dist/web.js"
+    import Chatbot from "https://critical-future-llm-in-a-box.github.io/llminaboxchatbots/chatbots/base/web-new.js"
     Chatbot.initFull({
         chatflowid: "${chatflowid}",
         apiHost: "${baseURL}",

@@ -80,7 +80,7 @@ const MaterialUISwitch = styled(Switch)(({ theme }) => ({
     }
 }))
 
-{/*const GitHubStarButton = ({ starCount, isDark }) => {
+const GitHubStarButton = ({ starCount, isDark }) => {
     const theme = useTheme()
 
     const formattedStarCount = starCount.toLocaleString()
@@ -141,7 +141,6 @@ GitHubStarButton.propTypes = {
     starCount: PropTypes.number.isRequired,
     isDark: PropTypes.bool.isRequired
 }
-*/}
 const Header = ({ handleLeftDrawerToggle }) => {
     const theme = useTheme()
     const navigate = useNavigate()
@@ -263,7 +262,7 @@ const Header = ({ handleLeftDrawerToggle }) => {
                         }
                     }}
                 >
-                    <GitHubStarButton starCount={starCount} isDark={isDark} />
+                    {/*<GitHubStarButton starCount={starCount} isDark={isDark} />*/}
                 </Box>
             ) : (
                 <Box sx={{ flexGrow: 1 }} />

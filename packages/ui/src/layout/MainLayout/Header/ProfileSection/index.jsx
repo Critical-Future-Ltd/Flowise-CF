@@ -486,7 +486,7 @@ const ProfileSection = ({ handleLogout }) => {
                                                     <ListItemText primary={<Typography variant='body2'>Import</Typography>} />
                                                 </PermissionListItemButton>
                                                 <input ref={inputRef} type='file' hidden onChange={fileChange} accept='.json' />
-{/*                                                 <ListItemButton
+                                                <ListItemButton
                                                     sx={{ borderRadius: `${customization.borderRadius}px` }}
                                                     onClick={() => {
                                                         setOpen(false)
@@ -496,19 +496,31 @@ const ProfileSection = ({ handleLogout }) => {
                                                     <ListItemIcon>
                                                         <IconInfoCircle stroke={1.5} size='1.3rem' />
                                                     </ListItemIcon>
-                                                    <ListItemText primary={<Typography variant='body2'>About Flowise</Typography>} />
-                                                </ListItemButton> */}
-                                                {localStorage.getItem('username') && localStorage.getItem('password') && (
+                                                    <ListItemText primary={<Typography variant='body2'>Version</Typography>} />
+                                                </ListItemButton>
+                                                {isAuthenticated && !currentUser.isSSO && (
                                                     <ListItemButton
                                                         sx={{ borderRadius: `${customization.borderRadius}px` }}
-                                                        onClick={handleLogout}
+                                                        onClick={() => {
+                                                            setOpen(false)
+                                                            navigate('/account')
+                                                        }}
                                                     >
                                                         <ListItemIcon>
-                                                            <IconLogout stroke={1.5} size='1.3rem' />
+                                                            <IconUserEdit stroke={1.5} size='1.3rem' />
                                                         </ListItemIcon>
-                                                        <ListItemText primary={<Typography variant='body2'>Logout</Typography>} />
+                                                        <ListItemText primary={<Typography variant='body2'>Account Settings</Typography>} />
                                                     </ListItemButton>
                                                 )}
+                                                <ListItemButton
+                                                    sx={{ borderRadius: `${customization.borderRadius}px` }}
+                                                    onClick={handleLogout}
+                                                >
+                                                    <ListItemIcon>
+                                                        <IconLogout stroke={1.5} size='1.3rem' />
+                                                    </ListItemIcon>
+                                                    <ListItemText primary={<Typography variant='body2'>Logout</Typography>} />
+                                                </ListItemButton>
                                             </List>
                                         </Box>
                                     </PerfectScrollbar>
@@ -520,12 +532,12 @@ const ProfileSection = ({ handleLogout }) => {
             </Popper>
             <AboutDialog show={aboutDialogOpen} onCancel={() => setAboutDialogOpen(false)} />
             <ExportDialog show={exportDialogOpen} onCancel={() => setExportDialogOpen(false)} onExport={(data) => onExport(data)} />
+            <ImportDialog show={importDialogOpen} />
         </>
     )
 }
 
 ProfileSection.propTypes = {
-    username: PropTypes.string,
     handleLogout: PropTypes.func
 }
 
